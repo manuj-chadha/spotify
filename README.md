@@ -3,7 +3,7 @@
 A sleek, modern music player built with **React.js**, **Redux Toolkit**, and powered by **Shazam Core API / Apple Music API**. This app allows users to discover top charts, play previews, explore artist details, and enjoy a responsive and intuitive UI.
 
 <div align="center">
-  <img src="./src/assets/logo.svg" alt="Banner" width="300" />
+  <img src="./src/assets/logo.svg" alt="Banner" width="300" style="padding: 20px;" />
 </div>
 
 ## 🚀 Features
