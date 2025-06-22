@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 
 import { Error, Loader, SongCard } from '../components';
 import { useGetSongsBySearchQuery } from '../redux/services/shazamCore';
+import SearchCard from '../components/SearchCard';
 
 const Search = () => {
   const { searchTerm } = useParams();
@@ -20,9 +21,9 @@ const Search = () => {
     <div className="flex flex-col">
       <h2 className="font-bold text-3xl text-white text-left mt-4 mb-10">Showing results for <span className="font-black">{searchTerm}</span></h2>
 
-      <div className="flex flex-wrap sm:justify-start justify-center gap-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
         {songs.map((song, i) => (
-          <SongCard
+          <SearchCard
             key={song.key}
             song={song}
             isPlaying={isPlaying}

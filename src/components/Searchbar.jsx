@@ -18,7 +18,8 @@ const Searchbar = () => {
       <label htmlFor="search-field" className="sr-only">
         Search all files
       </label>
-      <div className="flex flex-row justify-start items-center">
+      <div className="flex flex-row justify-between items-center bg-black w-full px-6 py-3 rounded-xl">
+      <div className="flex flex-row justify-start items-center bg-[#111111] rounded-full w-1/2 max-h-10">
         <FiSearch aria-hidden="true" className="w-5 h-5 ml-4" />
         <input
           name="search-field"
@@ -30,6 +31,19 @@ const Searchbar = () => {
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
         />
+      </div>
+        
+        <div className="flex items-center gap-4">
+          <p className="bg-white text-black text-[15px] px-4 py-1 rounded-2xl font-semibold hidden md:block cursor-pointer">
+            Explore Premium
+          </p>
+          <p className="bg-black py-1 px-3 rounded-2xl text-[15px] font-semibold cursor-pointer">
+            Install App
+          </p>
+          <p className="bg-purple-500 text-black w-7 h-7 rounded-full flex items-center justify-center cursor-pointer">
+            B
+          </p>
+        </div>
       </div>
     </form>
   );

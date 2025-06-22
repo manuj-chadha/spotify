@@ -14,38 +14,36 @@ const playerSlice = createSlice({
   initialState,
   reducers: {
     setActiveSong: (state, action) => {
-      state.activeSong = action.payload.song;
+      const { song, data, i } = action.payload;
+      state.activeSong = song;
 
-      if (action.payload?.data?.tracks?.hits) {
-        state.currentSongs = action.payload.data.tracks.hits;
-      } else if (action.payload?.data?.properties) {
-        state.currentSongs = action.payload?.data?.tracks;
+      if (data?.tracks?.hits) {
+        // e.g., Shazam search results
+        state.currentSongs = data.tracks.hits.map(hit => hit.track || hit);
+      } else if (data?.tracks && data?.properties) {
+        // e.g., related songs API
+        state.currentSongs = data.tracks;
       } else {
-        state.currentSongs = action.payload.data;
+        // default: pure array of songs
+        state.currentSongs = data;
       }
 
-      state.currentIndex = action.payload.i;
+      state.currentIndex = i;
       state.isActive = true;
     },
 
     nextSong: (state, action) => {
-      if (state.currentSongs[action.payload]?.track) {
-        state.activeSong = state.currentSongs[action.payload]?.track;
-      } else {
-        state.activeSong = state.currentSongs[action.payload];
-      }
+      const next = state.currentSongs[action.payload];
 
+      state.activeSong = next?.track || next;
       state.currentIndex = action.payload;
       state.isActive = true;
     },
 
     prevSong: (state, action) => {
-      if (state.currentSongs[action.payload]?.track) {
-        state.activeSong = state.currentSongs[action.payload]?.track;
-      } else {
-        state.activeSong = state.currentSongs[action.payload];
-      }
+      const prev = state.currentSongs[action.payload];
 
+      state.activeSong = prev?.track || prev;
       state.currentIndex = action.payload;
       state.isActive = true;
     },
@@ -60,6 +58,12 @@ const playerSlice = createSlice({
   },
 });
 
-export const { setActiveSong, nextSong, prevSong, playPause, selectGenreListId } = playerSlice.actions;
+export const {
+  setActiveSong,
+  nextSong,
+  prevSong,
+  playPause,
+  selectGenreListId,
+} = playerSlice.actions;
 
 export default playerSlice.reducer;
