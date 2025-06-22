@@ -2,7 +2,7 @@
 
 A sleek, modern music player built with **React.js**, **Redux Toolkit**, and powered by **Shazam Core API / Apple Music API**. This app allows users to discover top charts, play previews, explore artist details, and enjoy a responsive and intuitive UI.
 
-![Banner](./src/assets/logo.svg)
+<img src="./src/assets/logo.svg" alt="Banner" width="150" />
 
 ## 🚀 Features
 
@@ -22,6 +22,8 @@ A sleek, modern music player built with **React.js**, **Redux Toolkit**, and pow
 - **Styling**: Tailwind CSS
 - **Routing**: React Router DOM
 - **SwiperJS** for carousels
+
+<table> <tr> <th>🎵 Discover Page</th> <th>🧑‍🎤 Artist Details</th> <th>🎧 Music Player</th> </tr> <tr> <td><img src="https://via.placeholder.com/300x180?text=Discover+Page" width="250" /></td> <td><img src="https://via.placeholder.com/300x180?text=Artist+Details" width="250" /></td> <td><img src="https://via.placeholder.com/300x180?text=Music+Player" width="250" /></td> </tr> </table>
 
 ## 📦 Folder Structure
 
