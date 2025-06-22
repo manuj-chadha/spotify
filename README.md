@@ -27,5 +27,3 @@ A sleek, modern music player built with **React.js**, **Redux Toolkit**, and pow
 
 <table> <tr> <th>🎵 Discover Page</th> <th>🧑‍🎤 Artist Details</th> <th>🎧 Music Player</th> </tr> <tr> <td><img src="https://via.placeholder.com/300x180?text=Discover+Page" width="250" /></td> <td><img src="https://via.placeholder.com/300x180?text=Artist+Details" width="250" /></td> <td><img src="https://via.placeholder.com/300x180?text=Music+Player" width="250" /></td> </tr> </table>
 
-## 📦 Folder Structure
-
